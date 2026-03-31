@@ -714,6 +714,81 @@ details[open] > summary::after {
 }
 
 /* =========================
+   DETAILS / ACCORDIONS
+========================= */
+.docs-content details {
+  margin: 1.25rem 0;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
+}
+
+.docs-content summary {
+  cursor: pointer;
+  list-style: none;
+
+  padding: 0.85rem 1rem;
+
+  font-weight: 600;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  transition: background 0.2s ease;
+}
+
+.docs-content summary::-webkit-details-marker {
+  display: none;
+}
+
+.docs-content summary::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+
+  border-right: 2px solid #03e3fc;
+  border-bottom: 2px solid #6055f7;
+
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+
+  margin-right: 0.4rem;
+}
+
+.docs-content details[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.docs-content summary:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.docs-content details > *:not(summary) {
+  padding: 0.75rem 1rem 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.docs-content details[open] {
+  border-color: rgba(3, 227, 252, 0.35);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(3, 227, 252, 0.15);
+}
+
+
+/* =========================
    BANNER IMAGE
 ========================= */
 .doc-banner {
