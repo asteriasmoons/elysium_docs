@@ -6,7 +6,7 @@ import Giscus from "@giscus/react";
 export default function GiscusThread() {
   return (
     <Giscus
-      repo="asteriasmoons/elysium_docs"
+      repo="asteriasmoons/elysium-docs"
       repoId="R_kgDOR1PkZQ"
       category="Announcements"
       categoryId="DIC_kwDOR1PkZc4C5tSI"
