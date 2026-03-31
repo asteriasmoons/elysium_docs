@@ -6,7 +6,7 @@
     "prebuild": "node scripts/prebuild-docs.mjs",
     "build": "next build",
     "dev": "next dev",
-    "start": "next start",
+    "start": "next start -p ${PORT:-3000}",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
