@@ -1,15 +1,15 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
-import NextLink from "next/link";
-import { evaluate } from "@mdx-js/mdx";
+import { compile, run } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
+import NextLink from "next/link";
 import CodeBlock from "@/components/CodeBlock";
 import OnThisPage from "@/components/OnThisPage";
 import { NAV, type NavItemType } from "@/data/docsNav";
+import { getAllDocs } from "@/lib/docs";
+
+export const dynamic = "force-static";
 
 type PageProps = {
   params: Promise<{
@@ -17,46 +17,17 @@ type PageProps = {
   }>;
 };
 
-function getAllDocSlugs(dir: string, baseDir = dir): string[][] {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-
-  return entries.flatMap((entry) => {
-    const fullPath = path.join(dir, entry.name);
-
-    if (entry.isDirectory()) {
-      return getAllDocSlugs(fullPath, baseDir);
-    }
-
-    if (entry.isFile() && entry.name.endsWith(".mdx")) {
-      const relativePath = path.relative(baseDir, fullPath);
-      const slug = relativePath.replace(/\.mdx$/, "").split(path.sep);
-      return [slug];
-    }
-
-    return [];
-  });
-}
-
 export async function generateStaticParams() {
-  const docsDir = path.join(process.cwd(), "docs");
-  return getAllDocSlugs(docsDir).map((slug) => ({ slug }));
+  const docs = await getAllDocs();
+  return docs.map((doc) => ({ slug: doc.slug }));
 }
 
 function flattenNav(items: NavItemType[]): string[] {
   const result: string[] = [];
-
   for (const item of items) {
-    const isCategory = item.to.startsWith("/docs/category/");
-
-    if (!isCategory) {
-      result.push(item.to);
-    }
-
-    if (item.children?.length) {
-      result.push(...flattenNav(item.children));
-    }
+    if (!item.to.startsWith("/docs/category/")) result.push(item.to);
+    if (item.children?.length) result.push(...flattenNav(item.children));
   }
-
   return result;
 }
 
@@ -71,37 +42,25 @@ const CALLOUT_TYPES = new Set(["info", "note", "tip", "warning", "danger"]);
 type DirectiveNode = {
   type: "containerDirective" | "leafDirective";
   name?: string;
-  data?: {
-    hName?: string;
-    hProperties?: {
-      className?: string[];
-    };
-  };
+  data?: { hName?: string; hProperties?: { className?: string[] } };
 };
 
 function isDirectiveNode(node: unknown): node is DirectiveNode {
   return (
-    typeof node === "object" &&
-    node !== null &&
-    "type" in node &&
-    (((node as { type?: unknown }).type === "containerDirective") ||
-      ((node as { type?: unknown }).type === "leafDirective"))
+    typeof node === "object" && node !== null && "type" in node &&
+    ((node as { type?: unknown }).type === "containerDirective" ||
+      (node as { type?: unknown }).type === "leafDirective")
   );
 }
 
 function remarkDocusaurusCallouts() {
   return (tree: unknown) => {
     visit(tree as Parameters<typeof visit>[0], (node: unknown) => {
-      if (!isDirectiveNode(node)) {
-        return;
-      }
-
+      if (!isDirectiveNode(node)) return;
       if (typeof node.name === "string" && CALLOUT_TYPES.has(node.name)) {
         const data = node.data || (node.data = {});
         data.hName = "div";
-        data.hProperties = {
-          className: ["alert", node.name],
-        };
+        data.hProperties = { className: ["alert", node.name] };
       }
     });
   };
@@ -109,22 +68,21 @@ function remarkDocusaurusCallouts() {
 
 export default async function DocPage({ params }: PageProps) {
   const { slug = [] } = await params;
-  const filePath = path.join(process.cwd(), "docs", ...slug) + ".mdx";
+  const docs = await getAllDocs();
+  const doc = docs.find((d) => d.slug.join("/") === slug.join("/"));
 
-  if (!fs.existsSync(filePath)) {
+  if (!doc) {
     return <div style={{ padding: "2rem" }}>404 – Doc not found</div>;
   }
 
-  const fileContent = fs.readFileSync(filePath, "utf8");
-  const { content: rawContent } = matter(fileContent);
+  const compiled = await compile(doc.content, {
+    outputFormat: "function-body",
+    remarkPlugins: [remarkDirective, remarkDocusaurusCallouts],
+  });
 
-  // Strip Docusaurus-specific import lines that don't exist in this project
-  const content = rawContent.replace(/^import\s+.*from\s+['"']@docusaurus\/.*['"'];?\s*$/gm, "").trim();
-
-  const { default: MDXContent } = await evaluate(content, {
+  const { default: MDXContent } = await run(compiled, {
     ...runtime,
     baseUrl: import.meta.url,
-    remarkPlugins: [remarkDirective, remarkDocusaurusCallouts],
   });
 
   const orderedDocs = flattenNav(NAV);
