@@ -6,6 +6,7 @@ import NextLink from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
+import CodeBlock from "@/components/CodeBlock";
 
 type PageProps = {
   params: Promise<{
@@ -57,15 +58,35 @@ export default async function DocPage({ params }: PageProps) {
 
   const CALLOUT_TYPES = new Set(["info", "note", "tip", "warning", "danger"]);
 
+  type DirectiveNode = {
+    type: "containerDirective" | "leafDirective";
+    name?: string;
+    data?: {
+      hName?: string;
+      hProperties?: {
+        className?: string[];
+      };
+    };
+  };
+
+  function isDirectiveNode(node: unknown): node is DirectiveNode {
+    return (
+      typeof node === "object" &&
+      node !== null &&
+      "type" in node &&
+      (((node as { type?: unknown }).type === "containerDirective") ||
+        ((node as { type?: unknown }).type === "leafDirective"))
+    );
+  }
+
   function remarkDocusaurusCallouts() {
     return (tree: unknown) => {
-      visit(tree as Parameters<typeof visit>[0], (node: any) => {
-        if (
-          (node.type === "containerDirective" ||
-            node.type === "leafDirective") &&
-          typeof node.name === "string" &&
-          CALLOUT_TYPES.has(node.name)
-        ) {
+      visit(tree as Parameters<typeof visit>[0], (node: unknown) => {
+        if (!isDirectiveNode(node)) {
+          return;
+        }
+
+        if (typeof node.name === "string" && CALLOUT_TYPES.has(node.name)) {
           const data = node.data || (node.data = {});
           data.hName = "div";
           data.hProperties = {
@@ -91,18 +112,10 @@ export default async function DocPage({ params }: PageProps) {
       );
     },
 
+    
     pre: ({ children }: { children: ReactNode }) => (
-      <pre
-        style={{
-          whiteSpace: "pre-wrap",
-          wordBreak: "break-word",
-          overflowWrap: "anywhere",
-          overflowX: "hidden",
-        }}
-      >
-        {children}
-      </pre>
-    ),
+  <CodeBlock>{children}</CodeBlock>
+),
 
     code: ({ children }: { children: ReactNode }) => (
       <code

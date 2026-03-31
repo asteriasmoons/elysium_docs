@@ -289,6 +289,90 @@ hr,
 }
 
 /* =========================
+   CODE BLOCKS (Docusaurus)
+========================= */
+pre {
+  position: relative;
+  padding: 1.25rem 1.4rem;
+  margin: 1.75rem 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(51, 51, 51, 0.503),
+    rgba(51, 51, 51, 0.503)
+  );
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  overflow-x: auto;
+}
+
+/* code inside blocks */
+pre code {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #ffffff;
+}
+
+/* INLINE CODE */
+code:not(pre code) {
+  padding: 0.15rem 0.5rem;
+  margin: 0 0.1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff43e9;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   CODE BLOCK SCROLLBAR
+========================= */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff8c42, #ff43e9, #6055f7);
+  border-radius: 9999px;
+}
+
+/* Firefox */
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: #6055f7 transparent;
+}
+
+/* =========================
+   COPY BUTTON
+========================= */
+button[class*="copyButton"],
+button[title="Copy code to clipboard"] {
+  background: linear-gradient(135deg, #ff8c42, #ff43e9, #6055f7) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  color: #fff !important;
+  padding: 0.45rem 0.7rem !important;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button[class*="copyButton"]:hover,
+button[title="Copy code to clipboard"]:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+button[class*="copyButton"] svg,
+button[title="Copy code to clipboard"] svg {
+  fill: #fff !important;
+}
+
+
+/* =========================
    TABLES
 ========================= */
 table {
