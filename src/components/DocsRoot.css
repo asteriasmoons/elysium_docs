@@ -655,7 +655,7 @@ tbody tr:hover {
 ========================= */
 .alert {
   position: relative;
-  border-radius: 9999px;
+  border-radius: 24px;
   padding: 1rem 1.75rem 1rem 3.2rem;
   color: #fff;
   background: var(--gradient);
