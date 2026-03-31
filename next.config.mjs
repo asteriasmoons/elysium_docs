@@ -9,7 +9,7 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   output: "standalone",
   outputFileTracingIncludes: {
-    "/docs/[...slug]": ["./docs/**/*"],
+    "/*": ["./docs/**/*"],
   },
   serverExternalPackages: [],
 };
