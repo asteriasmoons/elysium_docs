@@ -125,6 +125,37 @@ main h6 {
   font-family: 'Lily Script One', cursive;
 }
 
+/* ======================
+  HEADINGS WITH ICONS
+  ===================== */
+h1.heading-with-icon,
+h2.heading-with-icon,
+h3.heading-with-icon,
+h4.heading-with-icon,
+h5.heading-with-icon,
+h6.heading-with-icon {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.6rem !important;
+  width: auto !important;
+}
+
+.heading-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block !important;
+  flex-shrink: 0;
+
+  /* makes it sit visually centered with text */
+  transform: translateY(1px);
+}
+
+.heading-with-icon span {
+  display: inline-block;
+}
+
 @supports (-webkit-background-clip: text) {
   .docs-content h1, .docs-page h1, main h1 {
     color: transparent;
