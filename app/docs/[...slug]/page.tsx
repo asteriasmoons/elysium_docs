@@ -3,7 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import NextLink from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { evaluate } from "@mdx-js/mdx";
+import * as runtime from "react/jsx-runtime";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
 import CodeBlock from "@/components/CodeBlock";
@@ -59,6 +60,53 @@ function flattenNav(items: NavItemType[]): string[] {
   return result;
 }
 
+type MdxLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  to?: string;
+  href?: string;
+  children: ReactNode;
+};
+
+const CALLOUT_TYPES = new Set(["info", "note", "tip", "warning", "danger"]);
+
+type DirectiveNode = {
+  type: "containerDirective" | "leafDirective";
+  name?: string;
+  data?: {
+    hName?: string;
+    hProperties?: {
+      className?: string[];
+    };
+  };
+};
+
+function isDirectiveNode(node: unknown): node is DirectiveNode {
+  return (
+    typeof node === "object" &&
+    node !== null &&
+    "type" in node &&
+    (((node as { type?: unknown }).type === "containerDirective") ||
+      ((node as { type?: unknown }).type === "leafDirective"))
+  );
+}
+
+function remarkDocusaurusCallouts() {
+  return (tree: unknown) => {
+    visit(tree as Parameters<typeof visit>[0], (node: unknown) => {
+      if (!isDirectiveNode(node)) {
+        return;
+      }
+
+      if (typeof node.name === "string" && CALLOUT_TYPES.has(node.name)) {
+        const data = node.data || (node.data = {});
+        data.hName = "div";
+        data.hProperties = {
+          className: ["alert", node.name],
+        };
+      }
+    });
+  };
+}
+
 export default async function DocPage({ params }: PageProps) {
   const { slug = [] } = await params;
   const filePath = path.join(process.cwd(), "docs", ...slug) + ".mdx";
@@ -68,54 +116,16 @@ export default async function DocPage({ params }: PageProps) {
   }
 
   const fileContent = fs.readFileSync(filePath, "utf8");
-  const { content } = matter(fileContent);
+  const { content: rawContent } = matter(fileContent);
 
-  type MdxLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-    to?: string;
-    href?: string;
-    children: ReactNode;
-  };
+  // Strip Docusaurus-specific import lines that don't exist in this project
+  const content = rawContent.replace(/^import\s+.*from\s+['"']@docusaurus\/.*['"'];?\s*$/gm, "").trim();
 
-  const CALLOUT_TYPES = new Set(["info", "note", "tip", "warning", "danger"]);
-
-  type DirectiveNode = {
-    type: "containerDirective" | "leafDirective";
-    name?: string;
-    data?: {
-      hName?: string;
-      hProperties?: {
-        className?: string[];
-      };
-    };
-  };
-
-  function isDirectiveNode(node: unknown): node is DirectiveNode {
-    return (
-      typeof node === "object" &&
-      node !== null &&
-      "type" in node &&
-      (((node as { type?: unknown }).type === "containerDirective") ||
-        ((node as { type?: unknown }).type === "leafDirective"))
-    );
-  }
-
-  function remarkDocusaurusCallouts() {
-    return (tree: unknown) => {
-      visit(tree as Parameters<typeof visit>[0], (node: unknown) => {
-        if (!isDirectiveNode(node)) {
-          return;
-        }
-
-        if (typeof node.name === "string" && CALLOUT_TYPES.has(node.name)) {
-          const data = node.data || (node.data = {});
-          data.hName = "div";
-          data.hProperties = {
-            className: ["alert", node.name],
-          };
-        }
-      });
-    };
-  }
+  const { default: MDXContent } = await evaluate(content, {
+    ...runtime,
+    baseUrl: import.meta.url,
+    remarkPlugins: [remarkDirective, remarkDocusaurusCallouts],
+  });
 
   const orderedDocs = flattenNav(NAV);
 
@@ -184,15 +194,7 @@ export default async function DocPage({ params }: PageProps) {
         }}
         className="docs-content"
       >
-        <MDXRemote
-          source={content}
-          components={components}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [remarkDirective, remarkDocusaurusCallouts],
-            },
-          }}
-        />
+        <MDXContent components={components} />
         <div
           style={{
             display: "flex",
