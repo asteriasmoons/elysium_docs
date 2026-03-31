@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { ReactNode, ReactElement } from "react";
+import Image from "next/image";
 
 type CodeBlockProps = {
   children: ReactNode;
@@ -56,7 +57,7 @@ export default function CodeBlock({ children }: CodeBlockProps) {
           top: "10px",
           right: "10px",
           zIndex: 10,
-          padding: "6px 10px",
+          padding: "6px",
           borderRadius: "9999px",
           border: "none",
           cursor: "pointer",
@@ -64,9 +65,16 @@ export default function CodeBlock({ children }: CodeBlockProps) {
           color: "#fff",
           fontSize: "0.85rem",
           fontWeight: 600,
+          display: "flex",
+          alignItems: "center",
         }}
       >
-        {copied ? "Copied!" : "Copy"}
+        <Image
+          src={copied ? "/img/icons/check.svg" : "/img/icons/copy.svg"}
+          width={16}
+          height={16}
+          alt={copied ? "Copied" : "Copy"}
+        />
       </button>
 
       <pre>{renderedChildren}</pre>
