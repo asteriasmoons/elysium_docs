@@ -7,6 +7,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
 import CodeBlock from "@/components/CodeBlock";
+import OnThisPage from "@/components/OnThisPage";
+import { NAV, type NavItemType } from "@/data/docsNav";
 
 type PageProps = {
   params: Promise<{
@@ -37,6 +39,24 @@ function getAllDocSlugs(dir: string, baseDir = dir): string[][] {
 export async function generateStaticParams() {
   const docsDir = path.join(process.cwd(), "docs");
   return getAllDocSlugs(docsDir).map((slug) => ({ slug }));
+}
+
+function flattenNav(items: NavItemType[]): string[] {
+  const result: string[] = [];
+
+  for (const item of items) {
+    const isCategory = item.to.startsWith("/docs/category/");
+
+    if (!isCategory) {
+      result.push(item.to);
+    }
+
+    if (item.children?.length) {
+      result.push(...flattenNav(item.children));
+    }
+  }
+
+  return result;
 }
 
 export default async function DocPage({ params }: PageProps) {
@@ -97,6 +117,17 @@ export default async function DocPage({ params }: PageProps) {
     };
   }
 
+  const orderedDocs = flattenNav(NAV);
+
+  const currentDocPath = `/docs/${slug.join("/")}`;
+  const currentIndex = orderedDocs.findIndex((path) => path === currentDocPath);
+
+  const previousDoc = currentIndex > 0 ? orderedDocs[currentIndex - 1] : null;
+  const nextDoc =
+    currentIndex >= 0 && currentIndex < orderedDocs.length - 1
+      ? orderedDocs[currentIndex + 1]
+      : null;
+
   const components = {
     Link: ({ to, href, children, ...props }: MdxLinkProps) => {
       const finalHref = href ?? to;
@@ -136,20 +167,22 @@ export default async function DocPage({ params }: PageProps) {
         width: "100%",
         display: "flex",
         justifyContent: "center",
+        alignItems: "flex-start",
         padding: "0 2rem",
         boxSizing: "border-box",
+        gap: "2rem",
       }}
     >
       <main
         style={{
-          width: "100%",
-          maxWidth: "900px",
+          flex: "0 1 900px",
           minWidth: 0,
           padding: "2rem 0",
           boxSizing: "border-box",
           overflowWrap: "anywhere",
           wordBreak: "break-word",
         }}
+        className="docs-content"
       >
         <MDXRemote
           source={content}
@@ -160,7 +193,34 @@ export default async function DocPage({ params }: PageProps) {
             },
           }}
         />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "1rem",
+            marginTop: "3rem",
+            paddingTop: "1.5rem",
+          }}
+        >
+          <div>
+            {previousDoc ? (
+              <NextLink href={previousDoc} className="button btn-gradient">
+                ← Previous
+              </NextLink>
+            ) : null}
+          </div>
+
+          <div>
+            {nextDoc ? (
+              <NextLink href={nextDoc} className="button btn-gradient">
+                Next →
+              </NextLink>
+            ) : null}
+          </div>
+        </div>
       </main>
+
+      <OnThisPage />
     </div>
   );
 }
