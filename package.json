@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "deploy": "npx opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
