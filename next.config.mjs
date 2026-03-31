@@ -11,6 +11,7 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/docs/[...slug]": ["./docs/**/*"],
   },
+  serverExternalPackages: [],
 };
 
 export default withMDX(nextConfig);
