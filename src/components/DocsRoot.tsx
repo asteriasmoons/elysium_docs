@@ -140,7 +140,7 @@ export default function DocsRoot({ children }: DocsRootProps) {
 
   return (
     <>
-      {!isOpen && (
+      <header className="ely-root-header">
         <button
           type="button"
           className="ely-root-toggle"
@@ -149,7 +149,27 @@ export default function DocsRoot({ children }: DocsRootProps) {
         >
           ☰
         </button>
-      )}
+
+        <div className="ely-root-header-brand">
+          <Image
+            src="/img/logo.png"
+            width={32}
+            height={32}
+            alt="Elysium"
+            unoptimized
+          />
+          <span className="ely-root-title">Elysium Docs</span>
+        </div>
+
+        <nav className="ely-root-header-nav">
+          <Link href="/docs/homepage" className="ely-root-header-link">
+            Docs
+          </Link>
+          <Link href="/updates" className="ely-root-header-link">
+            Updates
+          </Link>
+        </nav>
+      </header>
 
       {!isDesktop && isOpen && (
         <div className="ely-root-overlay" onClick={() => setIsOpen(false)} />

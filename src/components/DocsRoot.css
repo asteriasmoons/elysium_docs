@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Lily+Script+One&display=swap');
 
 html,
 body {
@@ -17,7 +17,7 @@ body {
   --primary: #6055f7;
   --gradient: linear-gradient(135deg, #03e3fc, #6055f7);
   --ely-sidebar-width: 340px;
-  --ely-navbar-offset: 3.75rem;
+  --ely-navbar-offset: 68px;
   --ely-shift: 0px;
 }
 
@@ -100,8 +100,29 @@ main h4,
 main h5,
 main h6 {
   display: block;
-  line-height: 1.15;
+  line-height: 1.3;
   letter-spacing: -0.02em;
+}
+
+.docs-content h1,
+.docs-content h2,
+.docs-content h3,
+.docs-content h4,
+.docs-content h5,
+.docs-content h6,
+.docs-page h1,
+.docs-page h2,
+.docs-page h3,
+.docs-page h4,
+.docs-page h5,
+.docs-page h6,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  font-family: 'Lily Script One', cursive;
 }
 
 @supports (-webkit-background-clip: text) {
@@ -201,6 +222,59 @@ main h6 {
   }
 }
 
+/* =========================
+   HEADER
+========================= */
+.ely-root-header {
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  background: rgba(17, 24, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ely-root-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ely-root-title {
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.ely-root-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.ely-root-header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.95rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.15s ease, background 0.18s ease;
+}
+
+.ely-root-header-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
 /* ========================
    ON THIS PAGE 
    ======================== */
@@ -276,12 +350,20 @@ main h6 {
   border: none;
   cursor: pointer;
   line-height: 1;
-  transition: filter 0.18s ease, transform 0.15s ease;
+  transition: filter 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+  box-shadow:
+  0 16px 28px rgba(0, 0, 0, 0.38),
+  0 6px 0 rgba(0, 0, 0, 0.18),
+  inset 0 2px 0 rgba(255, 255, 255, 0.28);
 }
 
 .button:hover {
   text-decoration: none;
   transform: translateY(-2px);
+  box-shadow:
+  0 20px 34px rgba(0, 0, 0, 0.42),
+  0 8px 0 rgba(0, 0, 0, 0.16),
+  inset 0 2px 0 rgba(255, 255, 255, 0.3);
 }
 
 .button.btn-gradient,
@@ -292,6 +374,12 @@ main h6 {
   animation: gradientFlow 3s ease infinite;
   color: #fff;
   border: none;
+  box-shadow:
+  0 0 0 1px rgba(255, 255, 255, 0.05),
+  0 14px 28px rgba(3, 227, 252, 0.2),
+  0 18px 30px rgba(0, 0, 0, 0.34),
+  0 7px 0 rgba(0, 0, 0, 0.16),
+  inset 0 2px 0 rgba(255, 255, 255, 0.28);
 }
 
 .button.btn-gradient:hover,
@@ -441,6 +529,69 @@ button[title="Copy code to clipboard"] svg {
   fill: #fff !important;
 }
 
+/* =========================
+   LISTS
+========================= */
+.docs-content ul,
+.docs-content ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.docs-content li {
+  margin: 0.4rem 0;
+  padding-left: 0.2rem;
+}
+
+.docs-content ul {
+  list-style: none;
+}
+
+.docs-content ul li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.docs-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #03e3fc, #6055f7);
+
+  box-shadow: 0 0 6px rgba(3, 227, 252, 0.6);
+}
+
+.docs-content ol {
+  padding-left: 1.6rem;
+}
+
+.docs-content ol li {
+  padding-left: 0.2rem;
+}
+
+.docs-content ul ul,
+.docs-content ol ol,
+.docs-content ul ol,
+.docs-content ol ul {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.docs-content li:hover {
+  color: #03e3fc;
+  transition: color 0.2s ease;
+}
+
+
 
 /* =========================
    TABLES
@@ -574,9 +725,8 @@ details[open] > summary::after {
 
 /* SIDEBAR TOGGLE BUTTON */
 .ely-root-toggle {
-  position: fixed;
-  left: 1rem;
-  z-index: 5000;
+  position: static;
+  z-index: auto;
   width: 44px;
   height: 44px;
   border: 0;
@@ -584,7 +734,7 @@ details[open] > summary::after {
   cursor: pointer;
   color: #fff;
   font-size: 1.15rem;
-  background: linear-gradient(135deg, #03e3fc, #6055f7);
+  background: var(--gradient);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
   display: flex;
   align-items: center;
@@ -594,10 +744,10 @@ details[open] > summary::after {
 /* SIDEBAR */
 .ely-root-sidebar {
   position: fixed;
-  inset: 0 auto 0 0;
+  inset: var(--ely-navbar-offset) auto 0 0;
   z-index: 4200;
   width: var(--ely-sidebar-width);
-  height: 100dvh;
+  height: calc(100dvh - var(--ely-navbar-offset));
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -727,11 +877,11 @@ details[open] > summary::after {
 @supports (-webkit-touch-callout: none) {
   .ely-root-sidebar {
     position: fixed !important;
-    inset: 0 auto 0 0 !important;
+    inset: var(--ely-navbar-offset) auto 0 0 !important;
     left: 0 !important;
     right: auto !important;
     bottom: 0 !important;
-    height: 100dvh !important;
+    height: calc(100dvh - var(--ely-navbar-offset)) !important;
     margin: 0 !important;
     padding: 0 !important;
     -webkit-transform: translate3d(-110%, 0, 0) !important;
