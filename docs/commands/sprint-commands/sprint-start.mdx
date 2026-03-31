@@ -1,0 +1,51 @@
+---
+sidebar_position: 6
+---
+
+# /sprint start 
+
+Start a new reading sprint for your server. Use this command to launch a timed reading session—perfect for group motivation, events, or just a friendly challenge to read more!
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/sprint start <duration>
+```
+- `<duration>` – The length of the sprint, in minutes (up to 60).
+
+:::warning
+**You should always use double digit numbers for the sprint time. 5 minutes should be 05 and so on and so forth.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/sprint start 30
+```
+This will:
+- Start a 30-minute reading sprint for everyone in the channel or server
+- Announce the start, timer, and instructions to join
+- Allow users to participate with `/sprint join` and log their progress
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Maximum sprint duration is 60 minutes
+> - Only one sprint can be active at a time in a server
+> - Anyone can join the sprint once it’s started
+> - Sprints are a fun way to motivate reading and build community
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/sprint join` – Join the active sprint with your starting page
+
+`/sprint finish` – Submit your ending page
+
+`/sprint leaderboard` – View results for the sprint
+
+`/sprint end` – End the sprint manually (admin only)
+
+`/sprint timeleft` – See how much time is left

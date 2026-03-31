@@ -1,0 +1,48 @@
+---
+sidebar_position: 9
+---
+
+# /reminders timezone 
+
+Set your timezone for all reminders. Use this command to ensure that all your reminders are sent at the correct local time, no matter where you are. Elysium uses this setting to schedule and trigger your reminders accurately.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders timezone <zone>
+```
+- `<zone>` – Your timezone, formatted as Region/City (e.g., America/Chicago, Europe/London). Use standard IANA timezone formats.
+
+:::warning
+**This command supports all major timezones.!**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders timezone America/Chicago
+```
+This will:
+- Set your reminder timezone to Central Time (America/Chicago)
+- Ensure all reminders are triggered at the intended local hour/minute
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Enter your timezone exactly in Region/City format (case-sensitive, no spaces)
+> - You cannot change the servers timezone without the correct permissions. It's best to route your personal reminders to your DMs where you can set timezone
+> - If you’re unsure of your zone, find your timezone here
+> - Useful for travelers or those living outside the server’s default timezone
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders set` – Set up a new reminder
+
+`/reminders list` – See your current reminders
+
+`/reminders reschedule` – Change a reminder’s time
+
+`/reminders message` – Edit a reminder’s text

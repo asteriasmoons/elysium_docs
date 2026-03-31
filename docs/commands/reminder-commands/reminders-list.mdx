@@ -1,0 +1,50 @@
+---
+sidebar_position: 4
+---
+
+# /reminders list 
+
+See a list of all your active reminders. Use this command to view your scheduled reminders—each with its message, scheduled time, and unique index number—making it easy to manage or update your notifications.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders list
+```
+
+:::warning
+No options or inputs are required—just run the command to view your reminders.
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders list
+```
+This will:
+- Display an embed listing all your reminders for the context in which you ran the command
+- If run in a server: shows reminders set for that server
+- If run in DMs: shows your personal (DM) reminders
+- For each reminder, you’ll see its index number, the message text, and its scheduled time
+- Make it easy to find and manage reminders
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Reminders are context-specific: server reminders only show up in servers, and DM reminders only show up in DMs
+> - Each reminder is assigned an index number for management—use this number to edit, remove, or reschedule the reminder
+> - The channel information is not shown—reminders are just listed for the current context
+> - Review this list often to keep your reminders up to date
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders set` – Create a new reminder
+
+`/reminders message` – Change the message for a reminder
+
+`/reminders remove` – Delete a reminder by its index
+
+`/reminders reschedule` – Change the time for a reminder

@@ -1,0 +1,46 @@
+---
+sidebar_position: 6
+---
+
+# /embed view
+
+Preview a saved embed directly in the channel without officially posting it. Useful for double-checking formatting, colors, or layout before sharing publicly.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/embed view <name>
+```
+- `<name>` – The name of the embed you want to preview. Must match an existing saved embed.
+
+:::success
+This command lets you see the embed as it will appear, but it won’t count as a public post. Great for safe testing.
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/embed view rules
+```
+This will:
+- Display the rules embed in the current channel
+- Let you visually confirm that everything looks right
+- Not ping anyone or trigger notifications
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Ideal for reviewing edits made with /embed edit before using /embed send.
+> - If the embed name doesn’t exist, Pandoryx will notify you.
+> - Only visible to those with permission to see the channel where the preview is run.
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/embed send` – Post your embed for everyone to see
+
+`/embed create` – Build a new embed
+
+`/embed list` – Browse your stored embeds

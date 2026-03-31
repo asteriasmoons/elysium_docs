@@ -1,0 +1,46 @@
+---
+sidebar_position: 5
+---
+
+# /reminders message 
+
+Change the message text for a specific reminder by its index number. Use this command to update what your reminder says—perfect for personalizing or clarifying your notifications.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders message <index> <text>
+```
+- `<index>` – The number of the reminder you want to edit (as listed in /reminders list)
+- `<text>` – The new message you want the reminder to display
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders message 2 Time to start your evening reading sprint!
+```
+This will:
+- Change the text of your second reminder to “Time to start your evening reading sprint!”
+- Keep the reminder’s time and other settings the same
+- Confirm the update with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Use `/reminders list` first to see index numbers for your reminders
+> - Only reminders in your current context (server or DM) can be updated
+> - Changing the message won’t affect the schedule or delivery of the reminder
+> - Use this to make your reminders more helpful or motivating
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders list` – View all your reminders and their index numbers
+
+`/reminders set` – Create a new reminder
+
+`/reminders remove` – Delete a reminder
+
+`/reminders reschedule` – Change a reminder’s time

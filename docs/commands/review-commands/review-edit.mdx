@@ -1,0 +1,56 @@
+---
+sidebar_position: 5
+---
+
+# /review edit 
+
+Edit an existing book review you submitted. Use this command to update your written review and/or star rating for a book and author—perfect for revising your thoughts, correcting typos, or changing your score after reflection.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/review edit <book> <author> <review> <rating>
+```
+- `<book>` – The title of the book you reviewed
+- `<author>` – The author of the book
+- `<review>` – Your new or updated review text
+- `<rating>` – Your new star rating (e.g., 1–5)
+
+:::info
+**You may edit your review as many times as you need.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/review edit "Legends & Lattes" "Travis Baldree" Even more enjoyable on a second read! 5
+```
+This will:
+- Update your review for “Legends & Lattes” by Travis Baldree with your new review text and a 5-star rating
+- Replace your previous review and rating for that book/author combination
+- Confirm the changes with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - You can only edit reviews you’ve written
+> - Editing your review overwrites the previous text and rating
+> - If you want to delete a review instead, use `/review delete`
+> - Star ratings should be whole numbers (1–5)
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/review add` – Add a new review
+
+`/review delete` – Remove your review
+
+`/review book` – View reviews for a book
+
+`/review author` – View reviews by author
+
+`/review list` – Browse all reviews
+
+`/review view` – Shortcut to view book reviews

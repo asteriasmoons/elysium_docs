@@ -1,0 +1,52 @@
+---
+sidebar_position: 4
+---
+
+# /journal list 
+
+See a list of your journal entries, organized by entry number. Use this command to quickly browse your private journal, find specific entries, or decide which ones you want to view, edit, or delete.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/journal list [page]
+```
+- `[page]` – (Optional) Specify a page number to view if you have many entries. If omitted, shows the first page.
+
+:::warning
+**If you have more than three entries then you will get buttons to turn to the next page unless you use the `[page]` parameter.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/journal list
+```
+This will:
+- Display an embed with a list of your most recent journal entries, showing entry numbers and a preview of each
+- Allow you to scroll through additional pages if you have many entries
+```bash
+/journal list 2
+```
+>> This will show the second page of your journal entry list
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Entries are ordered by their assigned number, from newest to oldest or vice versa depending on settings
+> - Use the list to find entry numbers for viewing, editing, or deleting
+> - Only your own entries are shown; your journal is always private
+> - Each entry preview shows a snippet—view the full entry with `/journal view <number>`
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/journal add` – Add a new entry to your journal
+
+`/journal view` – View a specific entry in full
+
+`/journal edit` – Edit an entry
+
+`/journal delete` – Delete an entry

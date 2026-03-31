@@ -1,0 +1,66 @@
+---
+sidebar_position: 3
+---
+import Link from '@docusaurus/Link';
+
+# Troubleshooting & FAQ
+Having trouble using Elysium Bot? Don’t worry — this page covers common issues, tips for fixing them, and how to report more serious bugs.
+
+<hr className="md-divider-gradient" />
+
+## Common Fixes
+#### The bot isn’t responding to commands
+- Make sure Elysium has permission to read and send messages in the channel.
+- Make sure you’re using slash commands `(/)`, not typing like a text command.
+- If the bot was recently added, it may take a moment to register commands — try reinviting it or waiting 1–2 minutes.
+
+#### I got an error message
+Elysium uses Discord’s embed system to let you know what went wrong — if you see an error, try reading the message closely.
+
+If the error says something is “missing”:
+- Double-check if you filled out all required fields (anything in `< >` is required).
+
+If the error says the bot doesn’t have permission:
+- An admin may need to adjust channel or role permissions.
+
+<hr className="md-divider-gradient" />
+
+## When in Doubt, Try:
+> - Refreshing your Discord app
+> - Trying the same command in a different channel or server or even try it in DMs
+> - Using `/help` to verify the command name and structure
+> - Checking that any required channels or roles have been set up via `/channel view`
+
+<hr className="md-divider-gradient" />
+
+## Found a Bug? Report it on GitHub
+<div className="md-button-row">
+<Link className="button btn-gradient">Bug Reports</Link>
+</div>
+:::warning
+If something really isn’t working the way it should — or if the bot seems broken in a specific command — please let the developer know by commenting on the GitHub Bug Reports thread.
+:::
+
+<hr className="md-divider-gradient" />
+
+## How to Report a Bug
+When reporting an issue, please include the following:
+- Command Used: `/habit add`
+- Expected Result: I expected an embed with buttons for configuration.
+
+**Steps to Reproduce:**
+- Ran `/habit add` in `#habit-tracking` channel
+- No buttons or embed appeared
+- Tried again in a DM and it worked
+- Screenshots (if applicable): Attach any images/screenshots you may have caught trying to use the command.
+
+> The more details you share, the easier and faster it’ll be to fix the bug!
+
+<hr className="md-divider-gradient" />
+
+## Not Sure if It’s a Bug?
+If you're not certain whether what you're seeing is a bug, feel free to ask in the Support Server
+
+Or use `/report <your message>` to reach out directly in Discord
+
+We’re happy to help either way!

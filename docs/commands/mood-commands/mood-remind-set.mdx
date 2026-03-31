@@ -1,0 +1,52 @@
+---
+sidebar_position: 3
+---
+
+# /mood remind set
+
+Set up a personal reminder to log your mood at a specific time and frequency. Use this command to have Elysium send you scheduled notifications to check in on your mood—perfect for building self-awareness and consistent emotional tracking.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/mood remind set <hour> <minute> <frequency> [timezone]
+```
+- `<hour>` – The hour you want the reminder to be sent (24-hour format, e.g., 20 for 8pm)
+- `<minute>` – The minute you want the reminder to be sent (e.g., 30 for :30 after the hour)
+- `<frequency>` – How often you want to be reminded (e.g., daily, weekly)
+- `[timezone]` – (Optional) Your timezone in Region/City format (e.g., America/Chicago). If omitted, defaults to the server default.
+
+:::secondary
+**Remember that time in the bot runs on 24 hour format. To figure out what time it is at per se 5PM, just add 12 to it to get 17**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/mood remind set 20 30 daily America/Chicago
+```
+This will:
+- Schedule a daily mood reminder at 8:30pm in the America/Chicago timezone
+- Elysium will send you a prompt at the set time, reminding you to log your mood
+- You’ll receive reminders according to your specified frequency and timezone
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Time uses a 24-hour clock; be sure to enter your desired hour and minute correctly
+> - You can change your reminder time or frequency anytime by running this command again
+> - If you don’t set a timezone, the bot uses the server default
+> - Reminders are private and only sent to you—not the entire server
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/mood remind off` – Turn off your mood reminder
+
+`/mood remind status` – Check if your mood reminder is active
+
+`/mood log` – Log your mood manually
+
+`/mood stats` – View your mood log statistics

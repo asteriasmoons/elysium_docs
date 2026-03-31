@@ -1,0 +1,49 @@
+---
+sidebar_position: 1
+---
+
+# /reminders channel add 
+
+Add a designated channel for setting up and/or receiving reading reminders. Use this command to tell Elysium where to send all repeating reminder messages—helping your community stay on track with their reading goals.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders channel add <channel>
+```
+- `<channel>` – Mention the channel (e.g., #reminders) where you want reminders to appear.
+
+:::warning
+**This is for where you want reminders to go to in your server.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders channel add #reminders
+```
+This will:
+- Set `#reminders` as an official channel for reading reminders
+- Allow Elysium to post repeating reminders and notifications in that channel
+- Support multiple reminder channels per server if you want (add as many as you need)
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only users with appropriate server permissions can designate channels
+> - Elysium needs permission to send messages in the selected channel
+> - You can add multiple channels for reminders, making it easy to keep different topics or groups organized
+> - To see all reminder channels, use /reminders channel list
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders channel list` – View all designated reminder channels
+
+`/reminders channel remove` – Remove a reminder channel
+
+`/reminders set` – Set a new reading reminder
+
+`/reminders list` – View all your reminders

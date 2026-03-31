@@ -1,0 +1,51 @@
+---
+sidebar_position: 4
+---
+
+# /habit remove
+
+Remove one of your habits if it’s no longer needed. Use this command to delete a habit from your list and stop tracking it—perfect for when you’ve accomplished a goal or want to simplify your routine.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/habit remove <name>
+```
+- `<name>` – The exact name of the habit you want to remove (as listed with /habit list)
+
+:::warning
+**Be extra certain you want to remove the habit before you run this command. If you change your mind later just re-add it with `/habit add` command**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/habit remove Hydrate
+```
+This will:
+- Permanently delete the habit named “Hydrate” from your tracked habits
+- Stop all XP, reminders, and tracking for this habit
+- Confirm the removal with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only habits you’ve created can be removed
+> - Be careful—removal is permanent and cannot be undone
+> - If you want to reschedule or edit a habit instead, use the appropriate command
+> - Removed habits will no longer show up in your habit list or stats
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/habit list` – View all your current habits
+
+`/habit add` – Add a new daily or weekly habit
+
+`/habit reschedule` – Change a habit’s scheduled time
+
+`/habit stats` – View statistics for your habits
+
+`/habit points` – See the XP you’ve earned from habits

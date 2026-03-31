@@ -1,0 +1,51 @@
+---
+sidebar_position: 5
+---
+
+# /sprint set role 
+
+Set a role to be pinged for reading sprints. Use this command to automatically notify a specific role in your server before a sprint ends—keeping everyone in the loop and boosting participation!
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/sprint set role <role mention>
+```
+- `<role mention>` – Mention the role you want Elysium to ping for sprint reminders (e.g., @Book Club).
+
+:::warning
+**Choose a role that is specifically made for sprints so you don't bother your entire server.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/sprint set role @Readers
+```
+This will:
+- Set `@Readers` as the sprint notification role
+- Automatically ping this role 5 minutes before the sprint ends and again at sprint end
+- Make sure everyone interested gets a heads-up and can submit their progress
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - You must have appropriate server permissions to set the ping role
+> - Elysium will ping the chosen role during every sprint in your server
+> - Only one role can be set at a time; running the command again replaces the previous role
+> - Great for organized groups or reading clubs
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/sprint start` – Begin a new sprint
+
+`/sprint end` – End a sprint manually
+
+`/sprint leaderboard` – View the leaderboard
+
+`/sprint join` – Join an active sprint
+
+`/sprint finish` – Log your ending page

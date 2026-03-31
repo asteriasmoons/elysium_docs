@@ -1,0 +1,50 @@
+---
+sidebar_position: 3
+---
+
+# /embed edit
+
+Edit a saved embed using an interactive editor with buttons and modals. This lets you update any part of your embed without starting over.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/embed edit <name>
+```
+- `<name>` – The name of the embed you want to edit. Must match a previously created embed.
+
+:::success
+The editor uses the same button-based interface as `/embed create`, allowing you to quickly adjust the title, description, colors, images, and more.
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/embed edit rules
+```
+This will:
+- Load the saved embed called rules into the visual editor
+
+Let you update:
+- Title, description, and color
+- Footer and author fields
+- Thumbnail or main image
+- Save the changes automatically
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Changes are saved instantly — there’s no need to re-run `/embed create.`
+> - If you want to preview the updated embed before sending it, use `/embed view.`
+> - You can repost the edited embed anytime using `/embed send.`
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/embed create` – Make a new embed
+
+`/embed view` – Preview a saved embed
+
+`/embed send` – Post your embed into a channel

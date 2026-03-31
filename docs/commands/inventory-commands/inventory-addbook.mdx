@@ -1,0 +1,47 @@
+---
+sidebar_position: 1
+---
+
+# /inventory addbook 
+
+Add a book to the global Elysium inventory. Use this command to expand the community booklist by adding a new title, including the book’s name, author, and a Goodreads link for reference.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/inventory addbook <book> <author> <goodreads link>
+```
+- `<book>` – The title of the book you want to add
+- `<author>` – The author of the book
+- `<goodreads link>` – A valid link to the book’s Goodreads page (for accurate info and easy lookup)
+
+:::warning
+**This is a global book inventory list. Meaning other people in other servers see the same thing that you see!**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/inventory addbook "Legends & Lattes" "Travis Baldree" https://www.goodreads.com/book/show/55522888-legends-lattes
+```
+This will:
+- Add “Legends & Lattes” by Travis Baldree to Elysium’s global inventory
+- Make the book visible to all users via `/inventory listbooks`
+- Help build a robust, searchable community reading list for everyone using Elysium
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - The Elysium inventory is global—books added are visible to all servers using Elysium
+> - Please ensure titles, author names, and Goodreads links are accurate for best results
+> - Duplicate entries for the same title and author are not allowed
+> - Only books with valid Goodreads links can be added (for accuracy and easy lookup)
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/inventory listbooks` – View the full global inventory
+
+`/inventory bookremove` – Remove a book from the inventory (server owner only)

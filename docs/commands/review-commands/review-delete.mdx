@@ -1,0 +1,54 @@
+---
+sidebar_position: 4
+---
+
+# /review delete 
+
+Delete a review you’ve submitted for a specific book and author. Use this command if you want to remove your feedback from Elysium’s global review collection.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/review delete <book> <author>
+```
+- `<book>` – The title of the book whose review you want to delete
+- `<author>` – The author of the book
+
+:::info
+This is not the same as the inventory command where you have to be an admin to delete stuff. If you wrote the review, you can delete it too.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/review delete "Legends & Lattes" "Travis Baldree"
+```
+This will:
+- Permanently remove your review for “Legends & Lattes” by Travis Baldree
+- Free you up to submit a new review for the same book in the future
+- Confirm the removal with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - You can only delete reviews you’ve written
+> - Deleting a review is permanent and cannot be undone
+> - After deletion, your review will no longer appear for that book or author
+> - To update a review without deleting, use `/review edit`
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/review add` – Add a new review
+
+`/review edit` – Update your existing review
+
+`/review book` – See reviews for a specific book
+
+`/review author` – View reviews by an author
+
+`/review list` – Browse all reviews
+
+`/review view` – Shortcut to view book reviews

@@ -1,0 +1,52 @@
+---
+sidebar_position: 3
+---
+
+# /recommend interval 
+
+Set how often you receive automatic book recommendations from Elysium. Use this command to control the frequency of recs sent to you—daily, weekly, monthly, or turn them off entirely.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/recommend interval <daily/weekly/monthly/none>
+```
+- `<daily/weekly/monthly/none>` – Choose daily, weekly, or monthly for regular book recs, or none to disable automatic recommendations.
+
+:::secondary
+**Set the interval you want to get book recommendations at.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/recommend interval weekly
+```
+> This will schedule Elysium to send you a new book recommendation every week
+```bash
+/recommend interval none
+```
+> This will disable automatic book recommendations—you’ll only get recs when you request them
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - You can change your interval at any time to fit your reading pace
+> - Use none if you only want recommendations when you manually request them
+> - Automatic recs are sent to the place you’ve set with `/recommend notify`
+> - Great for making sure recommendations arrive just as often as you want them
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/recommend get` – Get an instant recommendation
+
+`/recommend notify` – Set where your recs are sent
+
+`/recommend set` – Set all rec preferences at once
+
+`/recommend show` – View your current rec settings
+
+`/recommend genres` – Update your preferred genres

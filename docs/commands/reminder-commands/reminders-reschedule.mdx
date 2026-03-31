@@ -1,0 +1,51 @@
+---
+sidebar_position: 7
+---
+
+# /reminders reschedule 
+
+Reschedule an existing reminder by its index number. Use this command to update the hour and/or minute for a reminder—perfect for changing your routine or adjusting to a new schedule.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders reschedule <index> <hour> <minute>
+```
+- `<index>` – The number of the reminder to update (as shown in /reminders list)
+- `<hour>` – The new hour for the reminder (24-hour format, e.g., 20 for 8pm)
+- `<minute>` – The new minute for the reminder (e.g., 15 for :15 after the hour)
+
+:::warning
+**This command is good for book club meetings. If you had to reschedule the meeting you could very well do so with this command.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders reschedule 2 19 45
+```
+This will:
+- Update your second reminder to trigger at 7:45pm instead of its previous time
+- Keep the reminder’s message and all other settings the same
+- Confirm the new schedule with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Use `/reminders list` first to see index numbers for your reminders
+> - Only reminders in your current context (server or DM) can be rescheduled
+> - Enter the hour in 24-hour format to avoid confusion
+> - Great for shifting your routine without deleting and recreating reminders
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders list` – View all your reminders
+
+`/reminders set` – Create a new reminder
+
+`/reminders remove` – Delete a reminder by its index
+
+`/reminders message` – Change a reminder’s text

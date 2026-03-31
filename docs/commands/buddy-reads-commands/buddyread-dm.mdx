@@ -1,0 +1,50 @@
+---
+sidebar_position: 4
+---
+
+# /buddyread dm 
+
+Send a direct message to your paired reading buddy through the bot. This command makes it easy to keep communication private, safe, and organized—whether you’re in a channel or your DMs.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/buddyread dm <message> [book]
+```
+- `<message>` – The content you want to send to your paired buddy (required)
+- `[book]` – (Optional) Specify which buddy read session if you have multiple active (by book title)
+
+:::info
+**To be clear, this is a dm command for someone you have PAIRED with!**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/buddyread dm Hey! Are you free to start reading tonight?
+```
+This will:
+- Privately send your message to your paired buddy through Elysium Bot
+- Deliver the message regardless of whether you use this command in a server channel or a DM
+- If you’re paired with more than one buddy, you can specify the book to make sure it goes to the right person
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only works for users who are currently paired as reading buddies
+> - The recipient will receive your message via the bot for privacy and spam prevention
+> - If you have more than one active buddy read, always use the `[book]` option for clarity
+> - Both users must have Elysium in at least one shared server or both have DMs open to the bot
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/buddyread pair` – Pair with a reading buddy from the announcement board
+
+`/buddyread messages` – View your DM message history with buddies
+
+`/buddyread announce` – Announce you’re looking for a reading buddy
+
+`/buddyread finish` – Mark a buddy read session as finished

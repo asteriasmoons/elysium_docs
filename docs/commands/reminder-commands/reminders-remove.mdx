@@ -1,0 +1,49 @@
+---
+sidebar_position: 6
+---
+
+# /reminders remove 
+
+Remove a reminder by its index number. Use this command to delete a specific reminder you no longer need—helpful for clearing out old or duplicate notifications.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders remove <index>
+```
+- `<index>` – The number of the reminder you want to delete (as shown in /reminders list)
+
+:::warning
+**This command does a permanent thing to reminders! Make sure you know which reminder you truly want to remove before using this command.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders remove 1
+```
+This will:
+- Permanently delete your first reminder from the current context (server or DM)
+- Renumber any remaining reminders so the list stays organized (e.g., what was #2 becomes #1)
+- Confirm the removal with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Use `/reminders list` to check the current index numbers before removing
+> - Removing a reminder cannot be undone
+> - Reminders are renumbered automatically after deletion to keep things tidy
+> - Only reminders in your current context (server or DM) are affected
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders list` – See all your reminders and their indexes
+
+`/reminders set` – Create a new reminder
+
+`/reminders message` – Change a reminder’s text
+
+`/reminders reschedule` – Adjust a reminder’s time

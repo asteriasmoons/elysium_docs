@@ -1,0 +1,46 @@
+---
+sidebar_position: 3
+---
+
+# /channel set sprints 
+
+Set a designated channel for reading sprint event announcements. Use this command to choose where Elysium Bot will post all sprint-related messages, so participants know exactly where to find sprint updates, reminders, and results.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/channel set sprints <channel mention>
+```
+- `<channel mention>` – The channel where you want sprint event announcements to appear (must mention/tag the channel)
+
+:::success
+**Use this command for the channel that you want to actively run sprints in!**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/channel set sprints #reading-sprints
+```
+This will:
+- Assign the #reading-sprints channel as the official location for all reading sprint announcements
+- Ensure all future sprint notifications and results are posted in the selected channel
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only users with appropriate permissions (such as Manage Channels) can use this command
+> - You can update the sprint channel assignment at any time by running this command again with a new channel
+> - To remove the assignment and go back to default, use `/channel reset sprints`
+> - Having a dedicated sprint channel keeps reading events organized and easy to follow
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/channel reset` – Reset the configured channel for gifts or sprints
+
+`/channel set gifts` – Assign a channel for giftlist announcements
+
+`/channel view` – View your current channel assignments

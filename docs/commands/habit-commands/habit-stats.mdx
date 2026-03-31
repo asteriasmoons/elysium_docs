@@ -1,0 +1,54 @@
+---
+sidebar_position: 6
+---
+
+# /habit stats 
+
+View detailed statistics for a specific habit. Use this command to get an overview of a habit’s name, description, frequency, schedule, as well as your completion data—including total completions, current streak, and missed days.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/habit stats <name>
+```
+- `<name>` – The exact name of the habit you want to view stats for (as shown in /habit list)
+
+:::warning
+**This is a great way to view your progress on your habits.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/habit stats Hydrate
+```
+> This will display an embed showing all the following information for the “Hydrate” habit:
+- Name
+- Description
+- Frequency (daily or weekly)
+- Scheduled time
+- Total completions
+- Current streak (how many times in a row you’ve completed it on schedule)
+- Missed days (days you did not complete the habit on time)
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only habits you’ve created can be viewed with this command
+> - Use this to track your consistency, spot missed days, and stay motivated
+> - Streaks reset if a scheduled day is missed
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/habit list` – See all your current habits
+
+`/habit add` – Add a new habit to track
+
+`/habit remove` – Delete a habit
+
+`/habit reschedule` – Change a habit’s scheduled time
+
+`/habit points` – Check your total habit XP

@@ -1,0 +1,51 @@
+---
+sidebar_position: 8
+---
+
+# /reminders set 
+
+Set a new reading reminder—or any kind of repeating reminder. Use this command to schedule reminders with a custom message at a specific time every day, so you never forget your next reading session, task, or self-care check-in.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders set <hour> <minute> [text]
+```
+- `<hour>` – The hour to receive the reminder (24-hour format, e.g., 21 for 9pm)
+- `<minute>` – The minute after the hour (e.g., 30 for :30 after)
+- `[text]` – (Optional) The message you want your reminder to display (e.g., “Time to read!”). If left blank, a default message will be used.
+
+:::warning
+**Use this command to schedule any kind of reminder regardless of its context. This command can be used in DM as well.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders set 21 30 Time to read!
+```
+This will:
+- Set a repeating reminder every day at 9:30pm with the message “Time to read!”
+- Add this reminder to your list of active reminders
+- Confirm setup with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Reminders repeat daily at the set time (unless otherwise managed)
+> - Use `/reminders list` to see all your reminders and their index numbers
+> - You can set multiple reminders, each with its own message and time
+> - To edit or remove, use the related commands with the assigned index number
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders list` – See all your active reminders
+
+`/reminders remove` – Delete a reminder
+
+`/reminders message` – Change the message for a reminder
+
+`/reminders reschedule` – Update a reminder’s time

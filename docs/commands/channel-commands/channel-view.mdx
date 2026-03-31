@@ -1,0 +1,45 @@
+---
+sidebar_position: 4
+---
+
+# /channel view 
+
+View the current channel assignments for reading sprints and giftlist announcements in your server. Use this command to quickly check which channels are set for these features, so you know where important bot messages will appear.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/channel view
+```
+
+:::success
+No options or additional inputs are required—just run the command.
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/channel view
+```
+This will:
+- Display which channel is currently assigned for reading sprint event announcements
+- Display which channel is currently assigned for giftlist announcements
+- Show if either feature is not set to a specific channel and will use the default posting behavior
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only shows assignments relevant to your current server
+> - If no channel is set for sprints or gifts, the bot will use the channel where the relevant command is run
+> - Helpful for admins to quickly verify or update channel assignments as your server grows
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/channel set gifts` – Assign a channel for giftlist announcements
+
+`/channel set sprints` – Assign a channel for reading sprint events
+
+`/channel reset` – Reset the configured channel for gifts or sprints

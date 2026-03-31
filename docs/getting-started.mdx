@@ -1,0 +1,133 @@
+---
+sidebar_position: 2
+---
+import Link from '@docusaurus/Link';
+
+# Getting Started
+
+<div className="md-button-row">
+<Link className="button button--lg btn-gradient" href="https://discord.com/oauth2/authorize?client_id=1366843799451467797&permissions=8&integration_type=0&scope=bot+applications.commands">Invite Bot</Link>
+</div>
+
+<hr className="md-divider-gradient" />
+
+Welcome to Elysium! This guide will walk you through adding the bot to your server, setting up basic features, and getting comfortable with your first few commands.
+
+<hr className="md-divider-gradient" />
+
+## What You’ll Need
+Before using Elysium, make sure you have:
+- A Discord server (where you have Manage Server permissions)
+- A love for books, growth, or journaling (optional but highly encouraged)
+
+<hr className="md-divider-gradient" />
+
+## Invite Elysium to Your Server
+:::success
+Use the button at the top of the page to invite Elysium
+:::
+
+Make sure to grant the bot the necessary permissions during the invite flow. It needs:
+  - Send Messages
+  - Embed Links
+  - Use Slash Commands
+  - Manage Messages (for reminders and cleanups)
+  - Add Reactions (for interactive features)
+
+<hr className="md-divider-gradient" />
+
+## Initial Setup Tips
+After inviting Elysium, here are a few helpful things to do right away:
+
+### Set Up Your Profile
+Start by introducing yourself to the bot with:
+```bash
+/profile set <bio> <intention> <affirmation> <current read> <reading goal> <favorite genre> <preferred format> <favorite author>
+```
+Or use `/profile edit` to add just a few details at a time!
+
+<hr className="md-divider-gradient" />
+
+### Add a Book to Your Inventory
+If you’re tracking books globally with others:
+```bash
+/inventory addbook <book> <author> <goodreads link>
+```
+
+<hr className="md-divider-gradient" />
+
+### Create a Habit
+Build a daily or weekly habit tracker:
+```bash
+/habit add
+```
+> This will open a button-based modal to get you started.
+
+<hr className="md-divider-gradient" />
+
+### Start a Journal Entry
+Get thoughts out of your head and into a safe space:
+```bash
+/journal add <entry>
+```
+> View them any time with `/journal list`. It will send to your DMs so make sure the bot can message you.
+
+<hr className="md-divider-gradient" />
+
+### Log Your Mood
+Check in with how you’re feeling using:
+```bash
+/mood log
+```
+> Choose a mood, tag an activity, and optionally add a note!
+
+<hr className="md-divider-gradient" />
+
+### Optional: Set a Channel
+Want sprint announcements or giftlist pings in a specific place?
+Use:
+```bash
+/channel set sprints <channel>
+/channel set gifts <channel>
+```
+
+<hr className="md-divider-gradient" />
+
+### Set Up Reminders
+Elysium can send personal reminders for reading, moods, habits, or anything else!
+Try:
+```bash
+/reminders set <hour> <minute> [text]
+```
+> You can also set `/reminders timezone` to make sure it's correct for your location.
+
+<hr className="md-divider-gradient" />
+
+### Helpful Tips
+> - Use `/help` to get an embed with an overview of the bot’s features.
+> - Don’t include `< >` or `[ ]` in your commands — just input the values!
+> - All features work in DMs unless noted otherwise (some require server channel setup).
+> - Most commands give you modals, dropdowns, or buttons to guide you.
+
+<hr className="md-divider-gradient" />
+
+### Still Stuck?
+No worries! Head over to the Troubleshooting section, or use:
+```bash
+/report <your message>
+```
+to send feedback or ask for help directly.
+
+<hr className="md-divider-gradient" />
+
+## Join the Support Server
+Need help? Want to suggest a feature or just say hi?
+
+You’re warmly invited to join the official Elysium Support Server:
+[**Join the Support Server**](https://discord.gg/jS5eTjhK7R)
+
+<hr className="md-divider-gradient" />
+
+You're all set to explore!
+
+Start browsing the [**Commands Overview**](/docs/commands-overview) or dive right into your first journal entry, habit, or mood log!

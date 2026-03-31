@@ -1,0 +1,49 @@
+---
+sidebar_position: 2
+---
+
+# /journal delete 
+
+Delete one of your journal entries by its number. Use this command to permanently remove a specific entry from your private journal—helpful for cleaning up, correcting mistakes, or maintaining privacy.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/journal delete <index/number>
+```
+- `<index/number>` – The number of the journal entry you want to delete (as shown in your journal list)
+
+:::warning
+**Be certain of your choice to delete a journal entry because its irreversible.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/journal delete 3
+```
+This will:
+- Permanently remove your third journal entry from your private journal
+- Confirm the deletion with a message or embed
+- Renumber your remaining entries automatically for consistency
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - You can only delete entries from your own journal
+> - Deleted entries cannot be recovered—double-check before confirming
+> - Use `/journal list` to see entry numbers and details before deleting
+> - Entry numbers will be adjusted automatically after deletion
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/journal list` – See all your journal entries and their numbers
+
+`/journal view` – View the full text of any entry
+
+`/journal add` – Add a new entry to your journal
+
+`/journal edit` – Edit an existing entry

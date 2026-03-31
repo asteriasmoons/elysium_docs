@@ -1,0 +1,8 @@
+{
+  "label": "Standalone Commands",
+  "link": {
+    "type": "generated-index",
+    "description": "One off bot commands."
+  },
+  "collapsed": true
+}

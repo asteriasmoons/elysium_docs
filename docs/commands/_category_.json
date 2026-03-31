@@ -1,0 +1,9 @@
+{
+  "label": "Commands",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "All available bot commands organized by category."
+  },
+  "collapsed": true
+}

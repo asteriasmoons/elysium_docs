@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+---
+
+# /inventory bookremove 
+
+Remove a book from Elysium’s global inventory. Use this command to delete a book entry from the shared list if it’s a duplicate, incorrect, or no longer needed. Only server owners have permission to run this command.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/inventory bookremove <title> <author>
+```
+- `<title>` – The exact title of the book to remove (as it appears in the inventory)
+- `<author>` – The author of the book (must match the entry in the inventory)
+
+:::warning
+**Only server owners and admins may use this command!**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/inventory bookremove "Legends & Lattes" "Travis Baldree"
+```
+This will:
+- Permanently remove “Legends & Lattes” by Travis Baldree from Elysium’s global inventory
+- Prevent the book from appearing in future inventory searches or lists
+- Confirm the removal with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only server owners have permission to remove books from the inventory
+> - Be sure to use the exact title and author as shown in the inventory list
+> - This command is meant for correcting mistakes, removing duplicates, or cleaning up the book list
+> - Removal is global and affects all servers using Elysium
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/inventory addbook` – Add a book to Elysium’s inventory
+
+`/inventory listbooks` – View all books in the global inventory

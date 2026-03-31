@@ -1,0 +1,44 @@
+---
+sidebar_position: 2
+---
+
+# /embed delete
+
+Delete a saved embed from your server’s embed library. Use this to clean up old or unused embeds.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/embed delete <name>
+```
+- `<name>` – The name of the embed you want to delete. Must match an existing embed you previously created.
+
+:::success
+This action is permanent — once deleted, the embed cannot be recovered unless manually recreated.
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/embed delete rules
+```
+This will:
+- Permanently delete the embed named rules from your server’s embed storage
+- Return a confirmation message once complete
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Use `/embed list` if you’re unsure what embed names you’ve saved.
+> - You cannot delete embeds created by someone else unless you have the proper permissions (depending on how you’ve configured access in your server).
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/embed create` – Build a new embed from scratch
+
+`/embed edit` – Modify a saved embed
+
+`/embed list` – View all your saved embeds

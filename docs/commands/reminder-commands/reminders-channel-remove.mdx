@@ -1,0 +1,49 @@
+---
+sidebar_position: 3
+---
+
+# /reminders channel remove
+
+Remove a channel from being designated for reminders. Use this command to stop Elysium from sending repeating reading reminders to a specific channel in your server.
+
+<hr className="md-divider-gradient" />
+
+### 💬 Usage
+```bash
+/reminders channel remove <channel>
+```
+- `<channel>` – Mention the channel you want to remove from the reminder list (e.g., #reminders).
+
+:::warning
+**This will stop reminders from being sent in the specified channel. If no channel is set with the command then it defaults to the current channel.**
+:::
+
+<hr className="md-divider-gradient" />
+
+### 📌 Example
+```bash
+/reminders channel remove #reminders
+```
+This will:
+- Remove `#reminders` from the list of channels set to receive reminder notifications
+- Elysium will no longer send reminder messages to this channel
+- Confirm removal with a message or embed
+
+<hr className="md-divider-gradient" />
+
+### 🗃️ Notes
+> - Only users with appropriate server permissions can remove reminder channels
+> - Use `/reminders channel list` to double-check channels before removing
+> - Removing a channel does not affect your personal reminders or other designated channels
+> - You can always add the channel again with `/reminders channel add`
+
+<hr className="md-divider-gradient" />
+
+### 🔍 Related Commands
+`/reminders channel add` – Add a channel for reminders
+
+`/reminders channel list` – View all designated reminder channels
+
+`/reminders set` – Set a new reminder
+
+`/reminders list` – View all your reminders
