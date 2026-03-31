@@ -108,10 +108,12 @@ main h6 {
   .docs-content h1, .docs-page h1, main h1 {
     color: transparent;
     background: linear-gradient(135deg, #03e3fc, #6055f7);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
+
 .docs-content h1, .docs-page h1, main h1 {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   margin: 0 0 1.25rem;
@@ -320,8 +322,8 @@ code:not(pre code) {
   border-radius: 6px;
   font-size: 0.85rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  background: rgba(255, 255, 255, 0.08);
-  color: #ff43e9;
+  background: rgba(123, 58, 252, 0.075);
+  color: #8243ff;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -337,7 +339,7 @@ pre::-webkit-scrollbar-track {
 }
 
 pre::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #ff8c42, #ff43e9, #6055f7);
+  background: linear-gradient(135deg, #03e3fc, #6055f7);
   border-radius: 9999px;
 }
 
@@ -352,7 +354,7 @@ pre {
 ========================= */
 button[class*="copyButton"],
 button[title="Copy code to clipboard"] {
-  background: linear-gradient(135deg, #ff8c42, #ff43e9, #6055f7) !important;
+  background: linear-gradient(135deg, #03e3fc, #6055f7) !important;
   border: none !important;
   border-radius: 9999px !important;
   color: #fff !important;

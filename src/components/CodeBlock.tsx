@@ -60,7 +60,7 @@ export default function CodeBlock({ children }: CodeBlockProps) {
           borderRadius: "9999px",
           border: "none",
           cursor: "pointer",
-          background: "linear-gradient(135deg, #ff8c42, #ff43e9, #6055f7)",
+          background: "linear-gradient(135deg, #03e3fc, #6055f7)",
           color: "#fff",
           fontSize: "0.85rem",
           fontWeight: 600,
