@@ -1,65 +1,71 @@
 import Image from "next/image";
+import Link from "next/link";
+import "../src/components/DocsRoot.css";
+
+const cardStyle = {
+  background: "rgba(255, 255, 255, 0.05)",
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  borderRadius: "24px",
+  backdropFilter: "blur(16px)",
+  boxShadow: "0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(3, 227, 252, 0.05)",
+  padding: "3rem 3.5rem",
+  maxWidth: "560px",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column" as const,
+  alignItems: "center",
+  textAlign: "center" as const,
+  gap: "1.5rem",
+};
+
+const wrapperStyle = {
+  minHeight: "calc(100vh - 68px)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "2rem",
+};
+
+const headingStyle = {
+  fontSize: "clamp(2rem, 4vw, 2.8rem)",
+  fontWeight: 800,
+  margin: 0,
+  background: "linear-gradient(135deg, #03e3fc, #6055f7)",
+  backgroundClip: "text",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  fontFamily: "'Lily Script One', cursive",
+};
+
+const paraStyle = {
+  color: "rgba(255, 255, 255, 0.65)",
+  fontSize: "1.05rem",
+  lineHeight: 1.6,
+  margin: 0,
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div style={wrapperStyle}>
+      <div style={cardStyle}>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/img/logo.PNG"
+          alt="Elysium"
+          width={72}
+          height={72}
+          unoptimized
+          style={{ borderRadius: "50%" }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          <h1 style={headingStyle}>Elysium Docs</h1>
+          <p style={paraStyle}>
+            Your all-in-one powerhouse for moderation, automation, embeds, and more — all wrapped up in a sleek, slash-command–only experience.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        <Link href="/docs/homepage" className="btn-gradient button">
+          View Documentation
+        </Link>
+      </div>
     </div>
   );
 }
