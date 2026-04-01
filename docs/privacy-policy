@@ -1,0 +1,116 @@
+---
+sidebar_position: 98
+---
+
+# Privacy Policy
+
+**`Last Updated: April 1, 2026`**
+
+:::success
+This Privacy Policy explains how **Elysium** ("the Bot", "we", "our", or "us") collects, uses, and protects information when you interact with the bot through Discord. By using Elysium, you agree to the collection and use of information in accordance with this policy.
+:::
+
+<hr className="md-divider-gradient" />
+
+## 2. Information We Collect
+Elysium only collects data that is necessary to provide its features and functionality.
+
+### 2.1 User Data
+- Discord User ID  
+- Username and display name  
+- Server (Guild) ID  
+- Channel ID  
+
+### 2.2 Content Data
+- Messages or inputs provided through bot commands  
+- Journals, mood logs, habit tracking entries, and similar user-generated content  
+- Preferences or settings saved through bot features  
+
+### 2.3 System Data
+- Command usage logs  
+- Error logs for debugging and performance improvements  
+
+<hr className="md-divider-gradient" />
+
+## 3. How We Use Your Information
+We use the collected data strictly to:
+
+- Provide and maintain bot functionality  
+- Store user-specific features (journals, habits, reminders, etc.)  
+- Improve performance and reliability  
+- Debug issues and prevent abuse  
+- Deliver personalized experiences within the bot  
+
+We do **not** sell, rent, or trade your data.
+
+<hr className="md-divider-gradient" />
+
+## 4. Data Storage
+All data is stored securely using databases (such as MongoDB or similar systems) and is only accessible to authorized systems and developers maintaining Elysium.
+
+We take reasonable steps to protect your data, but no system can be guaranteed 100% secure.
+
+<hr className="md-divider-gradient" />
+
+## 5. Data Retention
+Your data is retained only for as long as necessary to provide bot functionality.
+You may request deletion of your data at any time (see Section 8).
+
+<hr className="md-divider-gradient" />
+
+## 6. Third-Party Services
+Elysium operates within Discord and may rely on third-party services such as:
+
+- Discord API  
+- Hosting providers  
+- Database services  
+
+These services may process limited data required for operation.
+We are not responsible for how Discord or other third parties handle your data.
+
+<hr className="md-divider-gradient" />
+
+## 7. Data Sharing
+We do not share your personal data except in the following cases:
+
+- When required by law  
+- To prevent abuse, fraud, or security threats  
+- To comply with legal obligations  
+
+<hr className="md-divider-gradient" />
+
+## 8. Your Rights
+You have the right to:
+- Request access to your stored data  
+- Request correction of inaccurate data  
+- Request deletion of your data  
+
+To make a request, contact the developer or support server associated with Elysium.
+
+<hr className="md-divider-gradient" />
+
+## 9. Data Deletion
+If you stop using Elysium or leave servers where it is active, your data may remain stored unless a deletion request is made.
+
+You can request full deletion of your data at any time.
+
+<hr className="md-divider-gradient" />
+
+## 10. Children's Privacy
+Elysium is not intended for users under the age of 13.  
+If we become aware that data from a user under 13 has been collected, it will be deleted.
+
+<hr className="md-divider-gradient" />
+
+## 11. Changes to This Policy
+We may update this Privacy Policy from time to time.
+Changes will be reflected by updating the "Last Updated" date at the top of this page.
+Continued use of the bot after changes means you accept the updated policy.
+
+<hr className="md-divider-gradient" />
+
+## 12. Contact
+If you have any questions about this Privacy Policy, you can contact us through:
+
+- The official Discord server  
+- The developer directly  
