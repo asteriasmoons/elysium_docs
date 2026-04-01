@@ -51,8 +51,8 @@ export default function Home() {
         <Image
           src="/img/logo.PNG"
           alt="Elysium"
-          width={72}
-          height={72}
+          width={144}
+          height={144}
           unoptimized
           style={{ borderRadius: "50%" }}
         />
