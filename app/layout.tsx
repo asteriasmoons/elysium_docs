@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Elysium Docs",
   description: "Docs site",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
