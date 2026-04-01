@@ -153,8 +153,8 @@ export default function DocsRoot({ children }: DocsRootProps) {
         <div className="ely-root-header-brand">
           <Image
             src="/img/logo.png"
-            width={32}
-            height={32}
+            width={34}
+            height={34}
             alt="Elysium"
             unoptimized
           />

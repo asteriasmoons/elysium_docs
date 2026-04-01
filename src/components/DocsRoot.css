@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius&family=Lily+Script+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Lily+Script+One&family=Quicksand:wght@400;500;600;700&display=swap');
 
 html,
 body {
@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* =========================
