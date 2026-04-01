@@ -62,7 +62,7 @@ type MdxLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode;
 };
 
-const CALLOUT_TYPES = new Set(["info", "note", "tip", "warning", "danger"]);
+const CALLOUT_TYPES = new Set(["success", "info", "note", "tip", "warning", "danger"]);
 
 type DirectiveNode = {
   type: "containerDirective" | "leafDirective";

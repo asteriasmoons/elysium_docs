@@ -790,17 +790,17 @@ button[title="Copy code to clipboard"] svg {
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-size: contain;
 }
 
 /* TYPE VARIANTS */
-.alert.success::before { background-image: url("/img/icons/tip.svg"); }
-.alert.note::before { background-image: url("/img/icons/note.svg"); }
-.alert.info::before { background-image: url("/img/icons/important.svg"); }
-.alert.warning::before { background-image: url("/img/icons/caution.svg"); }
-.alert.danger::before { background-image: url("/img/icons/danger.svg"); }
+.alert.success::before { background-image: url("/img/icons/star-success.svg"); }
+.alert.note::before { background-image: url("/img/icons/notes-note.svg"); }
+.alert.info::before { background-image: url("/img/icons/info-info.svg"); }
+.alert.warning::before { background-image: url("/img/icons/wand-warning.svg"); }
+.alert.danger::before { background-image: url("/img/icons/bfly-danger.svg"); }
 
 .alert:hover {
   box-shadow: 0 10px 26px rgba(0,0,0,0.22);
