@@ -1,4 +1,5 @@
 import { compile, run } from "@mdx-js/mdx";
+import remarkGfm from "remark-gfm";
 import * as runtime from "react/jsx-runtime";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
@@ -133,7 +134,7 @@ export default async function DocPage({ params }: PageProps) {
 
   const compiled = await compile(doc.content, {
     outputFormat: "function-body",
-    remarkPlugins: [remarkDirective, remarkDocusaurusCallouts],
+    remarkPlugins: [remarkGfm, remarkDirective, remarkDocusaurusCallouts],
   });
 
   const { default: MDXContent } = await run(compiled, {

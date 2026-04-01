@@ -622,32 +622,146 @@ button[title="Copy code to clipboard"] svg {
   transition: color 0.2s ease;
 }
 
-
-
 /* =========================
    TABLES
 ========================= */
-table {
+.docs-content table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: 1.5rem 0;
-  border-radius: 8px;
+
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.35)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-thead {
-  background: var(--primary);
+/* HEADER */
+.docs-content thead {
+  background: linear-gradient(135deg, #03e3fc, #6055f7);
+}
+
+.docs-content th {
+  text-align: left;
+  padding: 0.9rem 1.2rem;
+
+  font-weight: 700;
   color: #fff;
+  font-size: 0.95rem;
+
+  letter-spacing: 0.03em;
 }
 
-th, td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+/* CELLS */
+.docs-content td {
+  padding: 0.85rem 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-tbody tr:hover {
-  background: rgba(255,255,255,0.05);
+/* ROW STRIPING (subtle depth) */
+.docs-content tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* HOVER EFFECT */
+.docs-content tbody tr:hover {
+  background: rgba(3, 227, 252, 0.08);
+  transition: background 0.2s ease;
+}
+
+/* FIRST COLUMN (labels like Bug Reports) */
+.docs-content td:first-child {
+  font-weight: 600;
+  color: #03e3fc;
+  white-space: nowrap;
+}
+
+/* ROUNDED CORNERS FIX */
+.docs-content table tr:first-child th:first-child {
+  border-top-left-radius: 16px;
+}
+
+.docs-content table tr:first-child th:last-child {
+  border-top-right-radius: 16px;
+}
+
+.docs-content table tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+
+.docs-content table tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+
+.table-link {
+  color: #03e3fc;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.table-link:hover {
+  color: #6055f7;
+  text-decoration-color: #6055f7;
+}
+
+
+.docs-content td:first-child .table-link {
+  color: #03e3fc;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.table-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none !important;
+  color: #fff !important;
+  background: var(--gradient) !important;
+  border: none;
+  box-shadow:
+    0 10px 22px rgba(3, 227, 252, 0.18),
+    0 12px 24px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.table-button:hover {
+  color: #fff !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 14px 28px rgba(3, 227, 252, 0.2),
+    0 16px 28px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.docs-content td:first-child .table-button {
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 /* =========================
