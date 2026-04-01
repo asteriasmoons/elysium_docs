@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Elysium Docs",
   description: "Docs site",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/imgs/favicon.svg",
   },
 };
 
