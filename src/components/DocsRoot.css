@@ -773,7 +773,8 @@ button[title="Copy code to clipboard"] svg {
 .alert {
   position: relative;
   border-radius: 24px;
-  padding: 1rem 1.75rem 1rem 3.2rem;
+  padding: 1rem 1.75rem 1rem 2.8rem; 
+  /* the 2.8 is the space between text and icon */
   color: #fff;
   background: var(--gradient);
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
