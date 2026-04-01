@@ -152,7 +152,7 @@ export default function DocsRoot({ children }: DocsRootProps) {
 
         <div className="ely-root-header-brand" onClick={() => window.location.href = '/'} style={{ cursor: "pointer" }}>
           <Image
-            src="/img/logo.png"
+            src="/img/logo.PNG"
             width={34}
             height={34}
             alt="Elysium"
