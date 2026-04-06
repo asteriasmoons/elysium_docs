@@ -1095,6 +1095,26 @@ details[open] > summary::after {
   .docs-page {
     padding: 0 1rem;
   }
+
+  .docs-content table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .docs-content thead,
+  .docs-content tbody,
+  .docs-content tr {
+    white-space: nowrap;
+  }
+
+  .docs-content th,
+  .docs-content td {
+    white-space: nowrap;
+  }
 }
 
 
