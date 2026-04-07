@@ -49,7 +49,7 @@ export default function Home() {
     <div style={wrapperStyle}>
       <div style={cardStyle}>
         <Image
-          src="/img/logo.png"
+          src="/img/favicon.svg"
           alt="Elysium"
           width={144}
           height={144}
