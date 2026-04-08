@@ -89,12 +89,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-
-  // ── Theme ────────────────────────────────────────────────────
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0d0d0f" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-  ],
 };
 
 export default function RootLayout({
