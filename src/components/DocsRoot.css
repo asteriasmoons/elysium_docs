@@ -979,10 +979,18 @@ details[open] > summary::after {
     max-width: 100%;
     border-radius: 12px;
     margin: 1rem 0;
-    /* prevents giant tall images from taking over */
     max-height: 60vh;
     object-fit: contain;
   }
+  
+  .doc-image-alt {
+     widgh: 100%;
+     max-width: 100%;
+     border-radius: 12px;
+     margin: 1rem 0;
+     max-height: 60vh;
+     object-fit: contain;
+  } 
 }
 
 
