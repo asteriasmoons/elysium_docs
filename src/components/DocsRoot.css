@@ -975,22 +975,24 @@ details[open] > summary::after {
 /* MOBILE IMAGES */
 @media (max-width: 768px) {
   .doc-image {
+    display: block;
     width: 100%;
     max-width: 100%;
     border-radius: 12px;
-    margin: 1rem 0;
+    margin: 1rem auto;
     max-height: 60vh;
     object-fit: contain;
   }
-  
+
   .doc-image-alt {
-     widgh: 100%;
-     max-width: 100%;
-     border-radius: 12px;
-     margin: 1rem 0;
-     max-height: 60vh;
-     object-fit: contain;
-  } 
+    display: block;
+    width: 92%;
+    max-width: 92%;
+    border-radius: 12px;
+    margin: 1rem auto;
+    max-height: none;
+    object-fit: contain;
+  }
 }
 
 
