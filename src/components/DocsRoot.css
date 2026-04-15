@@ -966,9 +966,6 @@ details[open] > summary::after {
   max-width: 70%;
   border-radius: 14px;
   margin: 1.2rem auto;
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.06);
   object-fit: contain;
 }
 
